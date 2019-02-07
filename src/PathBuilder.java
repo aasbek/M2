@@ -197,7 +197,7 @@ public class PathBuilder {
 		L.labelNumber = 0;
 		L.path = new ArrayList<Integer>();
 		L.node = nodes.get(0);
-		L.time = Float.parseFloat("21");
+		L.time = Float.parseFloat("15.8");
 		L.profit = 0;
 		L.weightCapacityUsed = 0;
 		L.volumeCapacityUsed = 0;
