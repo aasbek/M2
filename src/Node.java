@@ -37,7 +37,7 @@ public class Node {
 		break;
 		case 9: locationName = "Ringebu";
 		break;
-		case 10: locationName = "Ringebu";
+		case 10: locationName = "Stjørdal";
 		break;
 		case 11: locationName = "End";
 		}

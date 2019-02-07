@@ -159,7 +159,7 @@ public class PathBuilder {
 						- inputdata.fuelPrice*inputdata.fuelConsumptionEmptyTruckPerKm*inputdata.getDistance(L.node,node,inputdata)
 						- inputdata.fuelPrice*inputdata.fuelConsumptionPerTonKm*L2.weightCapacityUsed*inputdata.getDistance(L.node,node,inputdata)
 						- inputdata.otherDistanceDependentCostsPerKm * inputdata.getDistance(L.node, node, inputdata)
-						- (inputdata.laborCostperHour + inputdata.otherTimeDependentCostsPerKm)* (L2.time - 0);
+						- (inputdata.laborCostperHour + inputdata.otherTimeDependentCostsPerKm)* (L2.time - L.time);
 			}
 	
 		
@@ -167,7 +167,7 @@ public class PathBuilder {
 			L2.profit = L.profit - inputdata.fuelPrice*inputdata.fuelConsumptionEmptyTruckPerKm*inputdata.getDistance(L.node,node,inputdata)
 						- inputdata.fuelPrice*inputdata.fuelConsumptionPerTonKm*L2.weightCapacityUsed*inputdata.getDistance(L.node,node,inputdata)
 						- inputdata.otherDistanceDependentCostsPerKm * inputdata.getDistance(L.node, node, inputdata)
-						- (inputdata.laborCostperHour + inputdata.otherTimeDependentCostsPerKm)* (L2.time - 0); 
+						- (inputdata.laborCostperHour + inputdata.otherTimeDependentCostsPerKm)* (L2.time - L.time); 
 			}
 		L2.path.add(node.number);
 		//L2.toString();
@@ -184,7 +184,7 @@ public class PathBuilder {
 		L.labelNumber = 0;
 		L.path = new ArrayList<Integer>();
 		L.node = nodes.get(0);
-		L.time = 0;
+		L.time = Float.parseFloat("20.4");
 		L.profit = 0;
 		L.weightCapacityUsed = 0;
 		L.volumeCapacityUsed = 0;
@@ -219,8 +219,13 @@ public class PathBuilder {
 					list.add(newLabel);
 				}
 			}
+			//Label startDepotLabel = LabelExtension(nodes.get(0), label);
+			//System.out.println(startDepotLabel);
+			//if(startDepotLabel.time < startDepotLabel.node.earlyTimeWindow) {
+			//	startDepotLabel.time = startDepotLabel.node.earlyTimeWindow;
+			//}
 			processed.add(label); //the label removed from unprosessed is added here
-			
+		
 		
 		}
 		
@@ -230,7 +235,15 @@ public class PathBuilder {
 //		}
 		System.out.println("number of non-dominated paths: "+list.size());
 		System.out.println("number of dominated labels: "+numberOfDominatedLabels);
+		System.out.println("The best label is:");
+		System.out.println(findBestLabel(list).toString());
+		System.out.println(inputdata.getTime(nodes.get(10),nodes.get(11),inputdata));
+		
+		
+		
+	
 		return list;
+		
 	}
 	
 	
@@ -291,6 +304,24 @@ public class PathBuilder {
 		processed.removeAll(remove);
 		
 		return true;
+	}
+	
+	public Label findBestLabel(ArrayList<Label> list) {
+		float currentBestProfit = 0;
+		Label bestLabel = null;
+		for(Label i : list) {
+			if(i.profit > currentBestProfit) {
+				currentBestProfit = i.profit;
+				bestLabel = i;
+			}
+		}
+		Label temp = bestLabel.predesessor;
+		while(temp!=null) {
+			System.out.println(temp.toString());
+		temp=temp.predesessor;
+		}
+		return bestLabel;
+		
 	}
 	
 
