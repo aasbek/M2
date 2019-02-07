@@ -1,12 +1,12 @@
-NodesVehiclek, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13,
+NodesVehiclek, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15
 VolumeCap , 81
 WeightCap , 30
-EarlyTimeWindow , 0   ,         0     ,       4     ,   30.75      ,     12     ,   38.25   ,        17   ,     42.25    ,       24  ,      52.75    ,        6      ,  31.15    ,       14       ,  42.5,
-LateTimeWindow , 79       ,    79    ,        28  ,       54.75       ,     36   ,      62.25   ,         41    ,     66.25     ,       48  ,       76.75   ,         30  ,       55.15     ,       38   ,       66.5,
-WeightLoad , 7 ,6 ,10 , 6, 8, 3
-VolumeLoad , 24 ,21 ,18, 17 , 24 ,1 ,
-PickupNodes , 1 ,  9,   8,   2,  3,  9,
-DeliveryNodes , 7,   4 ,  3  , 5 , 8,  10,
+EarlyTimeWindow , 0   ,         0     ,       4     ,   30.75      ,     12     ,   38.25   ,        17   ,     42.25    ,       24  ,      52.75    ,        6      ,  31.15    ,       14       ,  42.5, 6, 31.75 ,
+LateTimeWindow , 79       ,    79    ,        28  ,       54.75       ,     36   ,      62.25   ,         41    ,     66.25     ,       48  ,       76.75   ,         30  ,       55.15     ,       38   ,       66.5, 30, 55.75
+WeightLoad , 7 ,6 ,10 , 6, 8, 3, 13,
+VolumeLoad , 24 ,21 ,18, 17 , 24 ,1 , 28 
+PickupNodes , 1 ,  9,   8,   2,  3,  9, 3,
+DeliveryNodes , 7,   4 ,  3  , 5 , 8,  10, 9
 StartDepot, 5
 EndDepot, 11
 NumberOfCities, 11
