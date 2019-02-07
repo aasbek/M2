@@ -34,6 +34,10 @@ public class PathBuilder {
 		if(L.path.contains(node.number)) {
 			return null;
 		}
+		
+		if(L.unreachablePickupNodes.contains(node.number)) {
+			return null;
+		}
 	
 		Label L2 = new Label();
 		L2.node = node;
@@ -91,7 +95,7 @@ public class PathBuilder {
 			L2.openNodes.add(node.number);
 			for (int i=0 ; i < pickupNodes.size(); i++){
 				
-				if (!L2.path.contains(pickupNodes.get(i).number)){
+				if (!L2.path.contains(pickupNodes.get(i).number) && !L2.unreachablePickupNodes.contains(pickupNodes.get(i).number)){
 					if (L2.time + InstanceData.getTime(node, pickupNodes.get(i), inputdata) + node.weight *inputdata.timeTonService > pickupNodes.get(i).lateTimeWindow){
 						L2.unreachablePickupNodes.add(pickupNodes.get(i).number);
 					}
@@ -157,15 +161,24 @@ public class PathBuilder {
 		if(node.type == "PickupNode") {
 			L2.profit = L.profit + (inputdata.revenue * node.weight * inputdata.getDistance(node, node.getCorrespondingNode(node, nodes), inputdata))
 						- inputdata.fuelPrice*inputdata.fuelConsumptionEmptyTruckPerKm*inputdata.getDistance(L.node,node,inputdata)
-						- inputdata.fuelPrice*inputdata.fuelConsumptionPerTonKm*L2.weightCapacityUsed*inputdata.getDistance(L.node,node,inputdata)
+						- inputdata.fuelPrice*inputdata.fuelConsumptionPerTonKm*L.weightCapacityUsed*inputdata.getDistance(L.node,node,inputdata)
 						- inputdata.otherDistanceDependentCostsPerKm * inputdata.getDistance(L.node, node, inputdata)
 						- (inputdata.laborCostperHour + inputdata.otherTimeDependentCostsPerKm)* (L2.time - L.time);
-			}
-	
+			
+			//System.out.println(L2.profit);
+			//System.out.println(L.profit + (inputdata.revenue * node.weight * inputdata.getDistance(node, node.getCorrespondingNode(node, nodes), inputdata)));
+			//System.out.println(inputdata.fuelPrice*inputdata.fuelConsumptionEmptyTruckPerKm*inputdata.getDistance(L.node,node,inputdata));
+			//System.out.println(inputdata.fuelPrice*inputdata.fuelConsumptionPerTonKm*L.weightCapacityUsed*inputdata.getDistance(L.node,node,inputdata));
+			//System.out.println(inputdata.otherDistanceDependentCostsPerKm * inputdata.getDistance(L.node, node, inputdata));
+			//System.out.println((inputdata.laborCostperHour + inputdata.otherTimeDependentCostsPerKm)* (L2.time - L.time));
+			
+		}
+		
+		
 		
 		if(node.type == "Depot" || node.type == "DeliveryNode") {
 			L2.profit = L.profit - inputdata.fuelPrice*inputdata.fuelConsumptionEmptyTruckPerKm*inputdata.getDistance(L.node,node,inputdata)
-						- inputdata.fuelPrice*inputdata.fuelConsumptionPerTonKm*L2.weightCapacityUsed*inputdata.getDistance(L.node,node,inputdata)
+						- inputdata.fuelPrice*inputdata.fuelConsumptionPerTonKm*L.weightCapacityUsed*inputdata.getDistance(L.node,node,inputdata)
 						- inputdata.otherDistanceDependentCostsPerKm * inputdata.getDistance(L.node, node, inputdata)
 						- (inputdata.laborCostperHour + inputdata.otherTimeDependentCostsPerKm)* (L2.time - L.time); 
 			}
@@ -184,7 +197,7 @@ public class PathBuilder {
 		L.labelNumber = 0;
 		L.path = new ArrayList<Integer>();
 		L.node = nodes.get(0);
-		L.time = Float.parseFloat("20.4");
+		L.time = Float.parseFloat("21");
 		L.profit = 0;
 		L.weightCapacityUsed = 0;
 		L.volumeCapacityUsed = 0;
@@ -217,6 +230,7 @@ public class PathBuilder {
 			if(newLabel!=null) {
 				if(checkdominance(newLabel, unprocessed, processed)) {
 					list.add(newLabel);
+					//System.out.print(list);
 				}
 			}
 			//Label startDepotLabel = LabelExtension(nodes.get(0), label);
@@ -229,7 +243,7 @@ public class PathBuilder {
 		
 		}
 		
-		System.out.println("Number of paths:" + processed.size());
+		//System.out.println("Number of paths:" + processed.size());
 //		for(Label label : list) {
 //			System.out.println(label.toString());
 //		}
@@ -237,7 +251,8 @@ public class PathBuilder {
 		System.out.println("number of dominated labels: "+numberOfDominatedLabels);
 		System.out.println("The best label is:");
 		System.out.println(findBestLabel(list).toString());
-		System.out.println(inputdata.getTime(nodes.get(10),nodes.get(11),inputdata));
+		System.out.println(inputdata.getTime(nodes.get(2),nodes.get(3),inputdata));
+		System.out.println(inputdata.getDistance(nodes.get(0),nodes.get(2), inputdata));
 		
 		
 		
@@ -260,10 +275,10 @@ public class PathBuilder {
 					return false;
 				}
 			}
-//			System.out.println("Label: ");
-//			L1.toString();
-//			System.out.println("dominates label: ");
-//			L2.toString();
+			System.out.println("Label: ");
+			System.out.println(L1.toString());
+			System.out.println("dominates label: ");
+			System.out.println(L2.toString());
 			return true;
 		}
 		else return false; 

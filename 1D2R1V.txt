@@ -1,13 +1,13 @@
 NodesVehiclek , 0,  1,  2,  3,  4,  5,
 VolumeCap , 81
 WeightCap , 30
-EarlyTimeWindow , 0,            0,            4,         0,           12,        0,
+EarlyTimeWindow , 0,            0,            4,         30.75,           12,        38.25,
 LateTimeWindow , 79,       79,           28,         54.75,            36,    62.25,
 WeightLoad , 7, 6,
 VolumeLoad , 24, 21,
-PickupLocations, 3, 4,
-DeliveryLocations, 2, 3,
-StartDepot, 1,
+PickupLocations, 1, 9,
+DeliveryLocations, 7, 4,
+StartDepot, 5,
 EndDepot, 11,
 NumberOfCities, 11,
 Times :                 
