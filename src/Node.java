@@ -1,4 +1,5 @@
-import java.util.ArrayList;
+// import java.util.ArrayList;
+import java.util.Vector;
 
 
 public class Node {
@@ -37,13 +38,13 @@ public class Node {
 		break;
 		case 9: locationName = "Ringebu";
 		break;
-		case 10: locationName = "Stjørdal";
+		case 10: locationName = "Stjï¿½rdal";
 		break;
 		case 11: locationName = "End";
 		}
 	}
 	
-	public static Node getCorrespondingNode(Node node, ArrayList<Node>nodes) throws NullPointerException {
+	public static Node getCorrespondingNode(Node node, Vector<Node>nodes) throws NullPointerException {
 		if (node.type == "Depot"){
 	        throw new NullPointerException("The depot node does not have a corresponding node");
 		}

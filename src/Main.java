@@ -1,16 +1,17 @@
 import java.util.ArrayList;
+import java.util.Vector;
 
 public class Main {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		String datafile = "2D7R1V.txt";
+		String datafile = "1D7R1V.txt";
 		//ArrayList<PickupNode> pickupnodes = new ArrayList<PickupNode>();
 		//ArrayList<DeliveryNode> deliverynodes = new ArrayList<DeliveryNode>();
-		ArrayList<Node> nodes = new ArrayList<Node>();
-		ArrayList<Node> depot = new ArrayList<Node>();
-		ArrayList<Node> pickupNodes = new ArrayList<Node>();
-		ArrayList<Node> deliveryNodes = new ArrayList<Node>();
+		Vector<Node> nodes = new Vector<Node>();
+		Vector<Node> depot = new Vector<Node>();
+		Vector<Node> pickupNodes = new Vector<Node>();
+		Vector<Node> deliveryNodes = new Vector<Node>();
 		
 		InstanceData inputdata = new InstanceData(datafile);
 

@@ -1,5 +1,6 @@
 
 import java.util.ArrayList;
+import java.util.Vector;
 
 
 	public class Label {
@@ -10,9 +11,10 @@ import java.util.ArrayList;
 		public float volumeCapacityUsed;
 		public Label predesessor;
 		public Node node;
-		public ArrayList<Integer> path;
-		public ArrayList<Integer> unreachablePickupNodes;
-		public ArrayList<Integer> openNodes; //pickupnodes
+		public Vector<Integer> path;
+		public Vector<Integer> unreachablePickupNodes;
+		public Vector<Integer> openNodes; //pickupnodes
+	//	public float waitingTime;
 		
 
 	public String toString() {

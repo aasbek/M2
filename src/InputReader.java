@@ -1,12 +1,13 @@
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
-import java.util.ArrayList;
-import java.util.Arrays;
+// import java.util.ArrayList;
+// import java.util.Arrays;
+import java.util.Vector;
 
 
 public class InputReader {
-	public static void inputReader(String datafile,  ArrayList<Node> nodes, InstanceData inputdata, ArrayList<Node> depot, ArrayList<Node> pickupNodes, ArrayList<Node> deliveryNodes) {
+	public static void inputReader(String datafile,  Vector<Node> nodes, InstanceData inputdata, Vector<Node> depot, Vector<Node> pickupNodes, Vector<Node> deliveryNodes) {
 		try {
 			File file = new File(datafile);
 			//File file2 = file.getAbsoluteFile();
