@@ -4,8 +4,9 @@ import java.util.Vector;
 public class Main {
 
 	public static void main(String[] args) {
+		long startTime = System.nanoTime();
 		// TODO Auto-generated method stub
-		String datafile = "1D6R1V.txt";
+		String datafile = "15R1V.txt";
 		//ArrayList<PickupNode> pickupnodes = new ArrayList<PickupNode>();
 		//ArrayList<DeliveryNode> deliverynodes = new ArrayList<DeliveryNode>();
 		Vector<Node> nodes = new Vector<Node>();
@@ -26,6 +27,10 @@ public class Main {
 		builder.BuildPaths();
 		//System.out.println(Node.getCorrespondingNode(nodes.get(2),nodes).number);
 		
+		
+		//code
+		long endTime = System.nanoTime();
+		System.out.println("Took "+(endTime - startTime)/1000000 + " milli seconds"); 
 		
 	}
 }
