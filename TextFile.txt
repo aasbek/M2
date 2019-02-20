@@ -1,0 +1,23 @@
+Number of paths:9538
+number of non-dominated paths: 903
+number of dominated labels: 18950
+The best label is:
+Node: 21, Time: 58.149998, Profit: 1623147.6, WeightCapacityUsed: 0.0, VolumeCapacityUsed: 0.0, Path: [0, 2, 12, 16, 10, 3, 18, 11, 4, 17, 20, 5, 8, 19, 9, 13, 21], unreachablePickupNodes: [2, 12, 16, 10, 18, 14, 4, 20, 6, 8], openNodes: []
+Node: 13, Time: 54.6, Profit: 1625784.1, WeightCapacityUsed: 12.0, VolumeCapacityUsed: 27.0, Path: [0, 2, 12, 16, 10, 3, 18, 11, 4, 17, 20, 5, 8, 19, 9, 13], unreachablePickupNodes: [2, 12, 16, 10, 18, 14, 4, 20, 6, 8], openNodes: [20]
+Node: 9, Time: 52.75, Profit: 1626961.0, WeightCapacityUsed: 15.0, VolumeCapacityUsed: 28.0, Path: [0, 2, 12, 16, 10, 3, 18, 11, 4, 17, 20, 5, 8, 19, 9], unreachablePickupNodes: [2, 12, 16, 10, 18, 14, 4, 20, 6, 8], openNodes: [12, 20]
+Node: 19, Time: 49.8, Profit: 1628444.4, WeightCapacityUsed: 21.0, VolumeCapacityUsed: 45.0, Path: [0, 2, 12, 16, 10, 3, 18, 11, 4, 17, 20, 5, 8, 19], unreachablePickupNodes: [2, 12, 16, 10, 18, 14, 4, 20, 6, 8], openNodes: [12, 20, 8]
+Node: 8, Time: 47.95, Profit: 1629326.9, WeightCapacityUsed: 30.0, VolumeCapacityUsed: 69.0, Path: [0, 2, 12, 16, 10, 3, 18, 11, 4, 17, 20, 5, 8], unreachablePickupNodes: [2, 12, 16, 10, 18, 14, 4, 20, 6, 8], openNodes: [12, 18, 20, 8]
+Node: 5, Time: 44.850002, Profit: 1597368.8, WeightCapacityUsed: 24.0, VolumeCapacityUsed: 52.0, Path: [0, 2, 12, 16, 10, 3, 18, 11, 4, 17, 20, 5], unreachablePickupNodes: [2, 12, 16, 10, 18, 14, 4, 20, 6], openNodes: [12, 18, 20]
+Node: 20, Time: 40.65, Profit: 1600514.6, WeightCapacityUsed: 30.0, VolumeCapacityUsed: 73.0, Path: [0, 2, 12, 16, 10, 3, 18, 11, 4, 17, 20], unreachablePickupNodes: [2, 12, 16, 10, 18, 14, 4, 20, 6], openNodes: [12, 18, 4, 20]
+Node: 17, Time: 39.5, Profit: 1228024.5, WeightCapacityUsed: 18.0, VolumeCapacityUsed: 46.0, Path: [0, 2, 12, 16, 10, 3, 18, 11, 4, 17], unreachablePickupNodes: [2, 12, 16, 10, 18, 14, 4], openNodes: [12, 18, 4]
+Node: 4, Time: 35.9, Profit: 1230868.9, WeightCapacityUsed: 22.0, VolumeCapacityUsed: 58.0, Path: [0, 2, 12, 16, 10, 3, 18, 11, 4], unreachablePickupNodes: [2, 12, 16, 10, 18, 14, 4], openNodes: [12, 16, 18, 4]
+Node: 11, Time: 35.100002, Profit: 982468.9, WeightCapacityUsed: 16.0, VolumeCapacityUsed: 37.0, Path: [0, 2, 12, 16, 10, 3, 18, 11], unreachablePickupNodes: [2, 12, 16, 10, 18, 14], openNodes: [12, 16, 18]
+Node: 18, Time: 31.95, Profit: 984457.2, WeightCapacityUsed: 24.0, VolumeCapacityUsed: 61.0, Path: [0, 2, 12, 16, 10, 3, 18], unreachablePickupNodes: [2, 12, 16, 10, 18, 14], openNodes: [12, 16, 10, 18]
+Node: 3, Time: 30.75, Profit: 611389.5, WeightCapacityUsed: 15.0, VolumeCapacityUsed: 37.0, Path: [0, 2, 12, 16, 10, 3], unreachablePickupNodes: [2, 12, 16, 10], openNodes: [12, 16, 10]
+Node: 10, Time: 22.099998, Profit: 611859.25, WeightCapacityUsed: 22.0, VolumeCapacityUsed: 61.0, Path: [0, 2, 12, 16, 10], unreachablePickupNodes: [2, 12, 16, 10], openNodes: [2, 12, 16, 10]
+Node: 16, Time: 18.449999, Profit: 495363.4, WeightCapacityUsed: 14.0, VolumeCapacityUsed: 37.0, Path: [0, 2, 12, 16], unreachablePickupNodes: [2, 12, 16], openNodes: [2, 12, 16]
+Node: 12, Time: 14.0, Profit: 437357.5, WeightCapacityUsed: 10.0, VolumeCapacityUsed: 25.0, Path: [0, 2, 12], unreachablePickupNodes: [2, 12], openNodes: [2, 12]
+Node: 2, Time: 6.5, Profit: 341657.5, WeightCapacityUsed: 7.0, VolumeCapacityUsed: 24.0, Path: [0, 2], unreachablePickupNodes: [2], openNodes: [2]
+Node: 0, Time: 0.0, Profit: 0.0, WeightCapacityUsed: 0.0, VolumeCapacityUsed: 0.0, Path: [0], unreachablePickupNodes: [], openNodes: []
+Node: 1, Time: 59.35, Profit: 1623147.6, WeightCapacityUsed: 0.0, VolumeCapacityUsed: 0.0, Path: [0, 2, 12, 16, 10, 3, 18, 11, 4, 17, 20, 5, 8, 19, 9, 13, 21, 1], unreachablePickupNodes: [2, 12, 16, 10, 18, 14, 4, 20, 6, 8], openNodes: []
+Took 4136 milli seconds

@@ -1,3 +1,4 @@
+import java.io.PrintWriter;
 import java.util.PriorityQueue;
 import java.util.Vector;
 
@@ -7,18 +8,20 @@ public class PathBuilder {
 	public Vector<Node> deliveryNodes;
 	public Vector<Node> depot;
 	public InstanceData inputdata;
+	public PrintWriter pw;
 	// public ArrayList<Hashtable<Integer, Boolean>> feasibility;
 	private double zeroTol = 0.001;
 	private int numberOfDominatedLabels;
 	
 	// public static ArrayList<Hashtable<Integer, Boolean>> feasibilityTest; 
 	
-	public PathBuilder(Vector<Node> pickupNodes, Vector<Node> deliveryNodes, Vector<Node> nodes, Vector<Node> depot, InstanceData inputdata) {
+	public PathBuilder(Vector<Node> pickupNodes, Vector<Node> deliveryNodes, Vector<Node> nodes, Vector<Node> depot, InstanceData inputdata, PrintWriter pw) {
 		this.pickupNodes = pickupNodes;
 		this.nodes = nodes;
 		this.deliveryNodes = deliveryNodes;
 		this.depot = depot;
 		this.inputdata = inputdata;
+		this.pw = pw;
 		// feasibilityTest = new ArrayList<Hashtable<Integer, Boolean>>();
 		numberOfDominatedLabels = 0;
 	}
@@ -206,10 +209,15 @@ public class PathBuilder {
 		}
 		
 		System.out.println("Number of paths:" + processed.size());
+		pw.println("Number of paths:" + processed.size());
 		System.out.println("number of non-dominated paths: "+list.size());
+		pw.println("number of non-dominated paths: "+list.size());
 		System.out.println("number of dominated labels: "+numberOfDominatedLabels);
+		pw.println("number of dominated labels: "+numberOfDominatedLabels);
 		System.out.println("The best label is:");
+		pw.println ("The best label is:");
 		System.out.println(findBestLabel(list).toString());
+		//pw.println (findBestLabel(list).toString());
 		return list;
 	}
 	
@@ -284,9 +292,12 @@ public class PathBuilder {
 		Label temp = bestLabel.predesessor;
 		while(temp!=null) {
 			System.out.println(temp.toString());
+			pw.println (temp.toString());
 		temp=temp.predesessor;
-		} 
+		}
+		pw.println(bestLabel.toString());
 		return bestLabel;
+		
 		
 	}
 	
