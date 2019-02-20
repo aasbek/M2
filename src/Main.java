@@ -10,9 +10,9 @@ public class Main {
 	public static void main(String[] args) throws FileNotFoundException {
 		long startTime = System.nanoTime();
 		// TODO Auto-generated method stub
-		String datafile = "1D10R1V.txt";
+		String datafile = "20R1V.txt";
 		
-		File file = new File ("TextFile.txt");
+		File file = new File ("20R1V_results.txt");
 		
 		if (!file.exists()) {
 			try { file.createNewFile(); 
