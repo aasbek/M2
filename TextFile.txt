@@ -20,4 +20,4 @@ Node: 12, Time: 14.0, Profit: 437357.5, WeightCapacityUsed: 10.0, VolumeCapacity
 Node: 2, Time: 6.5, Profit: 341657.5, WeightCapacityUsed: 7.0, VolumeCapacityUsed: 24.0, Path: [0, 2], unreachablePickupNodes: [2], openNodes: [2]
 Node: 0, Time: 0.0, Profit: 0.0, WeightCapacityUsed: 0.0, VolumeCapacityUsed: 0.0, Path: [0], unreachablePickupNodes: [], openNodes: []
 Node: 1, Time: 59.35, Profit: 1623147.6, WeightCapacityUsed: 0.0, VolumeCapacityUsed: 0.0, Path: [0, 2, 12, 16, 10, 3, 18, 11, 4, 17, 20, 5, 8, 19, 9, 13, 21, 1], unreachablePickupNodes: [2, 12, 16, 10, 18, 14, 4, 20, 6, 8], openNodes: []
-Took 4136 milli seconds
+Took 5666 milli seconds
